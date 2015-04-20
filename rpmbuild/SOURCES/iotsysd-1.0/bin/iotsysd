@@ -1,0 +1,4 @@
+#!/bin/bash
+
+export PIDFILE="/var/run/iotsysd/iotsysd.pid"
+java -jar /etc/iotsysd/bin/iotsysd.jar & echo $! > $PIDFILE
