@@ -13,7 +13,7 @@ public class AndrewTechDeviceHandlerV1 extends DeviceHandler {
 
 	@Override
 	public void run() {
-		IotSysdLogger.logger("info", "Device: " + device.getName() + " Started !");
+		IotSysdLogger.logger("info", "Device: " + device.getName() + " Joined !");
 		// TODO Auto-generated method stub
 		int count = 0;
 		int modular = DeviceCMD.getTotalDuration(cmdList);
@@ -25,7 +25,7 @@ public class AndrewTechDeviceHandlerV1 extends DeviceHandler {
 			try 
 			{
 				count++;
-				if (finished && ! IotSysd.isRunning )
+				if (finished || ! IotSysd.isRunning )
 				{
 					IotSysdLogger.logger("info", super.name + " Connection Closed !");
 					super.closeDevice();
